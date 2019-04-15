@@ -37,7 +37,7 @@ long_cdf <- gather(cdf2, Categories, Amounts, 1:12)
 ###########################################################################################      
 ########################################################################################### 
 shinyApp(
-  ui = tagList(
+  ui <- tagList(
     navbarPage(
       theme = shinythemes::shinytheme("sandstone"),
       "U.S Congress",
@@ -177,7 +177,7 @@ shinyApp(
   ),
   ###########################################################################################      
   ########################################################################################### 
-  server = function(input, output) {
+  server <- function(input, output) {
     output$comparison <- renderPlot({
       data_cat<-subset(long_cdf,Categories==c(input$Category1,
                                               input$Category2,
